@@ -83,7 +83,7 @@ self.questionslvl6 = [
 	{"question": "How long does it take Earth to orbit the Sun?, "choices": ["180 days", "240 days", "365 days", "400 days"], "answer": 2, "difficulty": 6},
 	{"question": "What’s the main language spoken in Brazil?, "choices": ["Spanish", "Portuguese", "French", "Italian"], "answer": 1, "difficulty": 6},
 	{"question": "What’s the powerhouse of the cell?, "choices": ["Nucleus", "Ribosome", "Mitochondria", "Lysosome"], "answer": 2, "difficulty": 6},
-	{"question": "What is the solution to the equation: 3(x – 4) = 2x + 1?, "choices": ["x = -11", "x = 11", "x = 13", "x = 5"], "answer": 0, "difficulty": 6},
+	{"question": "What is the solution to the equation: 3(x – 4) = 2x + 1?, "choices": ["x = -11", "x = 11", "x = 13", "x = 5"], "answer": 3, "difficulty": 6},
 	{"question": "What is the main effect of dramatic irony in a narrative?, "choices": ["It creates suspense for the reader.", "It reveals the theme.", "It develops the character.", "It adds humor."], "answer": 0, "difficulty": 6}
 ]
 
