@@ -40,6 +40,7 @@ self.questionslvl3 = [
 	{"question": "How many inches are in a foot?, "choices": ["10", "12", "14", "16"], "answer": 1, "difficulty": 3},
 	{"question": "Which country is in South America?, "choices": ["Mexico", "Canada", "Brazil", "Spain"], "answer": 2, "difficulty": 3},
 	{"question": "What does “bilingual” mean?, "choices": ["Two children", "Two words", "Two languages", "Two schools"], "answer": 2, "difficulty": 3},
+	{"question": "If the temperature drops from 75°F to 60°F what is the percent decrease?, "choices": ["10%", "15%", "20%", "25%"], "answer": 2, "difficulty": 3}
 	{"question": "What is the author’s tone in the sentence: “The park was eerily silent - as though time had frozen.”?, "choices": ["Joyful", "Angry", "Mysterious", "Hopeful"], "answer": 2, "difficulty": 3}
 ]
 
@@ -83,7 +84,7 @@ self.questionslvl6 = [
 	{"question": "How long does it take Earth to orbit the Sun?, "choices": ["180 days", "240 days", "365 days", "400 days"], "answer": 2, "difficulty": 6},
 	{"question": "What’s the main language spoken in Brazil?, "choices": ["Spanish", "Portuguese", "French", "Italian"], "answer": 1, "difficulty": 6},
 	{"question": "What’s the powerhouse of the cell?, "choices": ["Nucleus", "Ribosome", "Mitochondria", "Lysosome"], "answer": 2, "difficulty": 6},
-	{"question": "What is the solution to the equation: 3(x – 4) = 2x + 1?, "choices": ["x = -11", "x = 11", "x = 13", "x = 5"], "answer": 3, "difficulty": 6},
+	{"question": "What is the solution to the equation: 3(x – 4) = 2x + 1?, "choices": ["x = -11", "x = 11", "x = 13", "x = 5"], "answer": 2, "difficulty": 6},
 	{"question": "What is the main effect of dramatic irony in a narrative?, "choices": ["It creates suspense for the reader.", "It reveals the theme.", "It develops the character.", "It adds humor."], "answer": 0, "difficulty": 6}
 ]
 
@@ -98,6 +99,5 @@ self.questionslvl7 = [
 	{"question": "Which blood type is known as the universal donor?, "choices": ["A", "B", "AB", "O"], "answer": 3, "difficulty": 7},
 	{"question": "What is the largest desert in the world?, "choices": ["Sahara", "Antarctic", "Arctic", "Gobi"], "answer": 1, "difficulty": 7},
 	{"question": "What language has the most native speakers?, "choices": ["English", "Spanish", "Hindi", "Mandarin"], "answer": 3, "difficulty": 7},
-	{"question": "If the temperature drops from 75°F to 60°F, "choices": [" what is the percent decrease?", "10%", "15%", "20%"], "answer": 3, "difficulty": 25%},
 	{"question": "A rocket travels 1200 miles in 2 hours then 800 miles in the next hour. What is its average speed?, "choices": ["600 mph", "650 mph", "700 mph", "750 mph"], "answer": 1, "difficulty": 7}
 ]
