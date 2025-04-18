@@ -25,7 +25,7 @@ self.questionslvl2 = [
 	{"question": "What does a thermometer measure?, "choices": ["Length", "Weight", "Temperature", "Speed"], "answer": 2, "difficulty": 2},
 	{"question": "Which of the following is a verb?, "choices": ["quickly", "run", "blue", "apple"], "answer": 1, "difficulty": 2},
 	{"question": "Which of the following is a simile?, "choices": [""She was a lion in the fight."", ""The leaves danced in the wind."", ""He is as brave as a lion."", ""Time flew by.""], "answer": 2, "difficulty": 2},
-	{"question": "Solve for x: 2x + 3 = 11, "choices": ["3", "4", "5", "6"], "answer": 2, "difficulty": 2}
+	{"question": "Solve for x: 2x + 3 = 11, "choices": ["3", "4", "5", "6"], "answer": 1, "difficulty": 2}
 ]
 
 self.questionslvl3 = [
