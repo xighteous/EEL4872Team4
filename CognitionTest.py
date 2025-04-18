@@ -130,21 +130,46 @@ class TriviaApp:
         self.start_time = None
         self.timer_seconds = 200
         self.timer_running = False
-        
-        # Create UI elements
-        self.start_button = tk.Button(root, text="Start", command=self.start_quiz, font=("Arial", 14))
+        self.consecutive_wrong = 0  # Track consecutive wrong answers
+        self.correct_answers = 0  # Track correct answers
+
+        # Create the starting screen
+        self.start_frame = tk.Frame(root)
+        self.start_frame.pack(fill="both", expand=True)
+
+        self.start_label = tk.Label(
+            self.start_frame,
+            text="Cognitive Ability Quiz!\n\n"
+                 f"You will have {self.timer_seconds} seconds to answer a mix of math, language, science, and trivia questions to assess your cognitive ability.\n\n"
+                 "Try to answer as many questions as you can correctly.\n"
+                 "Your score will depend on the difficulty of the questions you answer.",
+            font=("Arial", 14),
+            wraplength=600,
+            justify="center"
+        )
+        self.start_label.pack(pady=50)
+
+        self.start_button = tk.Button(
+            self.start_frame,
+            text="Start Quiz",
+            command=self.start_quiz,
+            font=("Arial", 14)
+        )
         self.start_button.pack(pady=20)
 
-        self.timer_label = tk.Label(root, text=f"Time Remaining: {self.timer_seconds} seconds", font=("Arial", 14))
+        # Create the quiz screen (hidden initially)
+        self.quiz_frame = tk.Frame(root)
+
+        self.timer_label = tk.Label(self.quiz_frame, text=f"Time Remaining: {self.timer_seconds} seconds", font=("Arial", 14))
         self.timer_label.pack()
 
-        self.question_info_label = tk.Label(root, text="", font=("Arial", 14))  # Show question number and difficulty
+        self.question_info_label = tk.Label(self.quiz_frame, text="", font=("Arial", 14))  # Show question number and difficulty
         self.question_info_label.pack()
 
-        self.question_label = tk.Label(root, text="", font=("Arial", 16), wraplength=500)
+        self.question_label = tk.Label(self.quiz_frame, text="", font=("Arial", 16), wraplength=500)
         self.question_label.pack(pady=20)
 
-        self.choices_frame = tk.Frame(root)
+        self.choices_frame = tk.Frame(self.quiz_frame)
         self.choices_frame.pack()
 
         self.choices_buttons = []
@@ -153,11 +178,14 @@ class TriviaApp:
             btn.pack(side=tk.TOP, pady=5)
             self.choices_buttons.append(btn)
 
-        self.exit_button = tk.Button(root, text="Exit", command=self.exit_quiz, font=("Arial", 14))
+        self.exit_button = tk.Button(self.quiz_frame, text="Exit", command=self.exit_quiz, font=("Arial", 14))
         self.exit_button.pack(pady=10)
 
     def start_quiz(self):
-        self.start_button.pack_forget()
+        # Hide the starting screen and show the quiz screen
+        self.start_frame.pack_forget()
+        self.quiz_frame.pack(fill="both", expand=True)
+
         self.score = 0
         self.current_level = 4  # Start at level 4
         self.current_question_index = 0  # Reset question index
@@ -165,7 +193,7 @@ class TriviaApp:
         self.timer_running = True
         self.start_time = time.time()
         self.update_timer()
-        
+
         # Enable and display the choice buttons
         for btn in self.choices_buttons:
             btn.config(state="normal")
@@ -215,21 +243,34 @@ class TriviaApp:
 
     def submit_answer(self, choice_index):
         if choice_index == self.current_question["answer"]:
-            self.score += 1
+            # Award points based on the difficulty of the current question
+            self.score += self.current_question["difficulty"]
+            self.correct_answers += 1
+            self.consecutive_wrong = 0  # Reset consecutive wrong answers
             self.current_level = min(self.current_level + 1, 7)  # Move up a level
         else:
-            self.current_level = max(self.current_level - 1, 1)  # Move down a level
+            self.consecutive_wrong += 1
+            if self.consecutive_wrong >= 2:  # Drop difficulty after 2 wrong answers
+                self.current_level = max(self.current_level - 1, 1)
+                self.consecutive_wrong = 0  # Reset consecutive wrong answers
         self.next_question()
 
     def end_quiz(self):
         self.timer_running = False
         end_time = time.time()
         time_taken = int(end_time - self.start_time)
-        messagebox.showinfo("Quiz Completed", f"Your Score: {self.score}/{self.total_questions}\nTime Taken: {time_taken} seconds")
+        messagebox.showinfo("Quiz Completed",
+                            f"Your Score: {self.score}\n"
+                            f"Correct Answers: {self.correct_answers}/{self.total_questions}\n"
+                            f"Time Taken: {time_taken} seconds")
         self.reset_quiz()
 
     def reset_quiz(self):
-        self.start_button.pack(pady=20)
+        # Show the start frame again
+        self.quiz_frame.pack_forget()
+        self.start_frame.pack(fill="both", expand=True)
+
+        # Reset timer and labels
         self.timer_label.config(text=f"Time Remaining: 200 seconds")
         self.question_info_label.config(text="")
         self.question_label.config(text="")
@@ -240,6 +281,10 @@ class TriviaApp:
         for level in self.levels.values():
             for question in level:
                 question["completed"] = False
+
+        # Reset other variables
+        self.consecutive_wrong = 0
+        self.correct_answers = 0
 
     def exit_quiz(self):
         self.root.destroy()
