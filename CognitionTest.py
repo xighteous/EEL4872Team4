@@ -129,7 +129,7 @@ class TriviaApp:
         self.total_questions = 10  # Limit to 10 questions
         self.score = 0
         self.start_time = None
-        self.timer_seconds = 200
+        self.timer_seconds = 0
         self.timer_running = False
         self.consecutive_wrong = 0  # Track consecutive wrong answers
         self.correct_answers = 0  # Track correct answers
@@ -210,16 +210,15 @@ class TriviaApp:
     def update_timer(self):
         if self.timer_running:
             elapsed_time = int(time.time() - self.start_time)
-            self.timer_seconds = max(0, 200 - elapsed_time)
-            self.timer_label.config(text=f"Time Remaining: {self.timer_seconds} seconds")
-            if self.timer_seconds > 0:
-                self.root.after(1000, self.update_timer)
-            else:
-                self.end_quiz()
+            self.timer_seconds = elapsed_time
+            self.timer_label.config(text=f"Time Remaining: {self.timer_seconds} seconds")            
+            self.root.after(1000, self.update_timer)
+            
 
     def next_question(self):
         # Check if the total number of questions has been reached
         if self.current_question_index >= self.total_questions:
+            self.timer_running = False # x  Stop the timer
             self.end_quiz()
             return
 
@@ -266,9 +265,9 @@ class TriviaApp:
     def end_quiz(self):
         self.timer_running = False
         end_time = time.time()
-        time_taken = int(end_time - self.start_time)
+        time_taken = self.timer_seconds
 
-        final_score = (self.total_questions / time_taken) * self.score if time_taken > 0 else 0
+        final_score = (self.total_questions / (time_taken + 1))
 
         messagebox.showinfo("Quiz Completed",
                     f"Your Score: {final_score:.2f}\n"
