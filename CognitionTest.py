@@ -182,8 +182,8 @@ class TriviaApp:
 
         self.choices_buttons = []
         for i in range(4):
-            btn = tk.Button(self.choices_frame, text="", font=("Arial", 12), state="disabled", command=lambda i=i: self.submit_answer(i))
-            btn.pack(side=tk.TOP, pady=5)
+            btn = tk.Button(self.choices_frame, text="", font=("Arial", 12), state="disabled", bg="lightgreen", command=lambda i=i: self.submit_answer(i))
+            btn.pack(side=tk.TOP, pady=5)            
             self.choices_buttons.append(btn)
 
         self.exit_button = tk.Button(self.quiz_frame, text="Exit", command=self.exit_quiz, font=("Arial", 14))
