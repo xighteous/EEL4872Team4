@@ -12,22 +12,22 @@
   - `time` – Tracks question timing  
   - `random` – Shuffles questions per level
 
-### `qsFormatted.py`
+### `qsFormatted.txt`
 
 - Stores the formatted content of 70 questions (10 per level × 7 levels)
 - Ensures each question is display-ready in the GUI
 
 ## 🎮 Levels Breakdown
 
-| Level | Difficulty | Questions |
-|-------|------------|-----------|
-| 1     | Beginner   | 10        |
-| 2     | Easy       | 10        |
-| 3     | Moderate   | 10        |
-| 4     | Challenging| 10        |
-| 5     | Hard       | 10        |
-| 6     | Expert     | 10        |
-| 7     | Master     | 10        |
+| Level | IQ Range        | Representative Figure           | Questions |
+|-------|------------------|----------------------------------|-----------|
+| 1     | 85–95            | **Average Adult**                | 10        |
+| 2     | 95–105           | **High School Graduate**         | 10        |
+| 3     | 105–115          | **College Student**              | 10        |
+| 4     | 115–125          | **Albert Einstein (child)**      | 10        |
+| 5     | 125–135          | **Isaac Newton (young adult)**   | 10        |
+| 6     | 135–145          | **Stephen Hawking**              | 10        |
+| 7     | 145+             | **Terence Tao**                  | 10        |
 
 Total: **70 questions**
 
