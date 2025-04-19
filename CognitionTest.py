@@ -8,7 +8,7 @@ class TriviaApp:
         self.root = root
         self.root.title("Trivia Quiz")
         self.root.geometry("700x600")
-        
+
         # Initialize variables
         self.questionslvl1 = [
             {"question": "Which word best completes the sentence? \"The cat sat on the ____.\"", "choices": ["mat", "hat", "bat", "rat"], "answer": 0, "difficulty": 1, "completed": False},
@@ -123,6 +123,7 @@ class TriviaApp:
             6: self.questionslvl6,
             7: self.questionslvl7,
         }
+        
         self.current_level = 4  # Start at level 4
         self.current_question_index = 0  # Track the current question number
         self.total_questions = 10  # Limit to 10 questions
@@ -136,6 +137,7 @@ class TriviaApp:
         # Create the starting screen
         self.start_frame = tk.Frame(root)
         self.start_frame.pack(fill="both", expand=True)
+        self.start_frame.config(bg="lightblue")
 
         self.start_label = tk.Label(
             self.start_frame,
@@ -147,7 +149,8 @@ class TriviaApp:
             wraplength=600,
             justify="center"
         )
-        self.start_label.pack(pady=50)
+        self.start_label.pack(pady=50)        
+        self.start_label.config(bg="lightblue")
 
         self.start_button = tk.Button(
             self.start_frame,
@@ -155,18 +158,23 @@ class TriviaApp:
             command=self.start_quiz,
             font=("Arial", 14)
         )
-        self.start_button.pack(pady=20)
+        self.start_button.pack(pady=20)        
+        self.start_button.config(bg="lightblue")
 
         # Create the quiz screen (hidden initially)
         self.quiz_frame = tk.Frame(root)
+        self.quiz_frame.config(bg="lightgreen")        
 
         self.timer_label = tk.Label(self.quiz_frame, text=f"Time Remaining: {self.timer_seconds} seconds", font=("Arial", 14))
+        self.timer_label.config(bg="lightgreen")
         self.timer_label.pack()
 
         self.question_info_label = tk.Label(self.quiz_frame, text="", font=("Arial", 14))  # Show question number and difficulty
+        self.question_info_label.config(bg="lightgreen")
         self.question_info_label.pack()
 
-        self.question_label = tk.Label(self.quiz_frame, text="", font=("Arial", 16), wraplength=500)
+        self.question_label = tk.Label(self.quiz_frame, text="", font=("Arial", 16), wraplength=500)        
+        self.question_label.config(bg="lightgreen")
         self.question_label.pack(pady=20)
 
         self.choices_frame = tk.Frame(self.quiz_frame)
