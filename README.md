@@ -36,7 +36,9 @@ Total: **70 questions**
 - **David Orozco** 
 - **Samuel Levasseur**
 - **Ken Bone**
-- **Jaden Adkins** 
+- **Jaden Adkins**
+- **Joshua D'Souza** 
+
 
 ## 🛠 Requirements
 
