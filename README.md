@@ -35,7 +35,7 @@ Total: **70 questions**
 
 - **David Orozco** 
 - **Samuel Levasseur**
-- **Ken Bone**
+- **Michael Schlosbon**
 - **Jaden Adkins**
 - **Joshua D'Souza**
 
