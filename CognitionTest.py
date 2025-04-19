@@ -142,7 +142,7 @@ class TriviaApp:
             text="Cognitive Ability Quiz!\n\n"
                  f"You will have {self.timer_seconds} seconds to answer a mix of math, language, science, and trivia questions to assess your cognitive ability.\n\n"
                  "Try to answer as many questions as you can correctly.\n"
-                 "Your score will depend on the difficulty of the questions you answer.",
+                 "Your score will depend on the difficulty of the questions you answer and the amount of time you take.",
             font=("Arial", 14),
             wraplength=600,
             justify="center"
@@ -259,10 +259,13 @@ class TriviaApp:
         self.timer_running = False
         end_time = time.time()
         time_taken = int(end_time - self.start_time)
+
+        final_score = (self.total_questions / time_taken) * self.score if time_taken > 0 else 0
+
         messagebox.showinfo("Quiz Completed",
-                            f"Your Score: {self.score}\n"
-                            f"Correct Answers: {self.correct_answers}/{self.total_questions}\n"
-                            f"Time Taken: {time_taken} seconds")
+                    f"Your Score: {final_score:.2f}\n"
+                    f"Correct Answers: {self.correct_answers}/{self.total_questions}\n"
+                    f"Time Taken: {time_taken} seconds")
         self.reset_quiz()
 
     def reset_quiz(self):
