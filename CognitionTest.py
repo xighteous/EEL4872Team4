@@ -126,7 +126,7 @@ class TriviaApp:
         
         self.current_level = 4  # Start at level 4
         self.current_question_index = 0  # Track the current question number
-        self.total_questions = 10  # Limit to 10 questions
+        self.total_questions = 15  # Limit to 10 questions
         self.score = 0
         self.start_time = None
         self.timer_seconds = 0
@@ -165,7 +165,7 @@ class TriviaApp:
         self.quiz_frame = tk.Frame(root)
         self.quiz_frame.config(bg="lightgreen")        
 
-        self.timer_label = tk.Label(self.quiz_frame, text=f"Time Remaining: {self.timer_seconds} seconds", font=("Arial", 14))
+        self.timer_label = tk.Label(self.quiz_frame, text=f"Time Elapsed: {self.timer_seconds} seconds", font=("Arial", 14))
         self.timer_label.config(bg="lightgreen")
         self.timer_label.pack()
 
@@ -211,7 +211,7 @@ class TriviaApp:
         if self.timer_running:
             elapsed_time = int(time.time() - self.start_time)
             self.timer_seconds = elapsed_time
-            self.timer_label.config(text=f"Time Remaining: {self.timer_seconds} seconds")            
+            self.timer_label.config(text=f"Time Elapsed: {self.timer_seconds} seconds")            
             self.root.after(1000, self.update_timer)
             
 
