@@ -63,7 +63,7 @@ class TriviaApp:
             {"question": "What is the square root of 49?", "choices": ["5", "6", "7", "8"], "answer": 2, "difficulty": 4, "completed": False},
             {"question": "Which branch of government makes laws?", "choices": ["Executive", "Legislative", "Judicial", "Federal"], "answer": 1, "difficulty": 4, "completed": False},
             {"question": "How many continents are there?", "choices": ["5", "6", "7", "8"], "answer": 2, "difficulty": 4, "completed": False},
-            {"question": "What is 25%% of 80?", "choices": ["10", "15", "20", "25"], "answer": 2, "difficulty": 4, "completed": False},
+            {"question": "What is 25% of 80?", "choices": ["10", "15", "20", "25"], "answer": 2, "difficulty": 4, "completed": False},
             {"question": "Which word is an antonym of “include”?", "choices": ["Add", "Involve", "Exclude", "Accept"], "answer": 2, "difficulty": 4, "completed": False},
             {"question": "How many sides does a hexagon have?", "choices": ["5", "6", "7", "8"], "answer": 1, "difficulty": 4, "completed": False},
             {"question": "What is an adjective?", "choices": ["A person", "A place", "A describing word", "An action"], "answer": 2, "difficulty": 4, "completed": False},
@@ -142,7 +142,7 @@ class TriviaApp:
         self.start_label = tk.Label(
             self.start_frame,
             text="Cognitive Ability Quiz!\n\n"
-                 f"You will have {self.timer_seconds} seconds to answer a mix of math, language, science, and trivia questions to assess your cognitive ability.\n\n"
+                 f"You will be given a mix of math, language, science, and trivia questions to assess your cognitive ability.\n\n"
                  "Try to answer as many questions as you can correctly.\n"
                  "Your score will depend on the difficulty of the questions you answer and the amount of time you take.",
             font=("Arial", 14),
@@ -268,7 +268,8 @@ class TriviaApp:
         time_taken = self.timer_seconds
 
         # score is scaled by the average time taken per question
-        # Maximum score for 10 questions in 10 seconds is 64 (10/10) * (4+5+6+7*7) 
+        # Maximum score for 10 questions in 10 seconds is 64 = (10/10) * (4+5+6+7*7)
+        # Maximum score for 20 seconds is 32
         final_score = (self.total_questions / (time_taken)) * self.score if time_taken > 0 else 0
 
         messagebox.showinfo("Quiz Completed",
