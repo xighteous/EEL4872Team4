@@ -112,7 +112,7 @@ class TriviaApp:
             {"question": "What is the largest desert in the world?", "choices": ["Sahara", "Antarctic", "Arctic", "Gobi"], "answer": 1, "difficulty": 7, "completed": False},
             {"question": "What language has the most native speakers?", "choices": ["English", "Spanish", "Hindi", "Mandarin"], "answer": 3, "difficulty": 7, "completed": False},
             {"question": "A rocket travels 1200 miles in 2 hours then 800 miles in the next hour. What is its average speed?", "choices": ["600 mph", "650 mph", "700 mph", "750 mph"], "answer": 1, "difficulty": 7, "completed": False},
-            {"question": "Which planet has the most moons?", "choices": ["Earth", "Mars", "Jupiter", "Saturn"], "answer": 3, "difficulty": 7, "completed": False}
+            {"question": "If you folded a piece of paper in half 50 times, how thick would it be?", "choices": ["As tall as a house", "As tall as Mount Everest", "As tall as the Moon", "As tall as the Sun"], "answer": 2, "difficulty": 7, "completed": False}
         ]
 
         self.levels = {
