@@ -267,7 +267,9 @@ class TriviaApp:
         end_time = time.time()
         time_taken = self.timer_seconds
 
-        final_score = (self.total_questions / (time_taken + 1))
+        # score is scaled by the average time taken per question
+        # Maximum score for 10 questions in 10 seconds is 64 (10/10) * (4+5+6+7*7) 
+        final_score = (self.total_questions / (time_taken)) * self.score if time_taken > 0 else 0
 
         messagebox.showinfo("Quiz Completed",
                     f"Your Score: {final_score:.2f}\n"
