@@ -19,15 +19,15 @@
 
 ## 🎮 Levels Breakdown
 
-| Level | IQ Range        | Representative Figure           | Questions |
-|-------|------------------|----------------------------------|-----------|
-| 1     | 85–95            | **Average Adult**                | 10        |
-| 2     | 95–105           | **High School Graduate**         | 10        |
-| 3     | 105–115          | **College Student**              | 10        |
-| 4     | 115–125          | **Albert Einstein (child)**      | 10        |
-| 5     | 125–135          | **Isaac Newton (young adult)**   | 10        |
-| 6     | 135–145          | **Stephen Hawking**              | 10        |
-| 7     | 145+             | **Terence Tao**                  | 10        |
+| Level | IQ Range         | Representative Figure            |
+|-------|------------------|----------------------------------|
+| 1     | 85–95            | **Average Adult**                |
+| 2     | 95–105           | **High School Graduate**         |
+| 3     | 105–115          | **College Student**              |
+| 4     | 115–125          | **Albert Einstein (child)**      |
+| 5     | 125–135          | **Isaac Newton (young adult)**   |
+| 6     | 135–145          | **Stephen Hawking**              |
+| 7     | 145+             | **Terence Tao**                  |
 
 Total: **70 questions**
 
